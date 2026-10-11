@@ -16,20 +16,16 @@ Open `index.html` and use the **Live Server** extension (right-click → *Open w
 
 ## Publish on GitHub Pages
 
-1. On github.com, create a **new public repository** named `nour-spotlight` (no README).
-2. In this folder, in the VS Code terminal:
-   ```
-   git init
-   git add index.html README.md
-   git commit -m "Nour Ben Said WTM spotlight"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/nour-spotlight.git
-   git push -u origin main
-   ```
-3. On GitHub: **Settings → Pages → Branch: main, folder: /(root) → Save**.
-4. After a minute or two the page is live at `https://<your-username>.github.io/nour-spotlight/`.
+This folder is already connected to https://github.com/Lava-Rock-Labs-LLC/nour-spotlight. Wait to publish until Nour has approved the photo and quote, since `index.html` contains her photo.
 
-Wait to publish until Nour has approved the photo and quote.
+1. In this folder, in the VS Code terminal:
+   ```
+   git add index.html
+   git commit -m "Add Nour's spotlight page"
+   git push
+   ```
+2. On GitHub: **Settings → Pages → Branch: main, folder: /(root) → Save**.
+3. After a minute or two the page is live at `https://lava-rock-labs-llc.github.io/nour-spotlight/`.
 
 ## Still to do
 
