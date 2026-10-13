@@ -6,9 +6,12 @@ A single-page spotlight for Nour Ben Said, built by Annet Sumi (Lava Rock Labs).
 
 | File | What it is |
 |---|---|
-| `index.html` | The final page (denim and mustard design). Everything is inside this one file, including the photo. |
-| `nour.jpg` | The cropped portrait, kept separately in case you want to swap or re-crop it. |
-| `index-coastal.html` | Backup of the earlier coastal turquoise version. |
+| `index.html` | The published page (denim and mustard design). Everything is inside this one file, including the photo. The "In her words" quote is left out for now. |
+| `index-with-photo.html` | Local only. The full version with the "In her words" quote, ready to copy back in. |
+| `nour.jpg` | Local only. The cropped portrait, kept separately in case you want to swap or re-crop it. |
+| `index-coastal.html` | Local only. Backup of the earlier coastal turquoise version. |
+
+The local-only files are listed in `.git/info/exclude`, so the repo itself stays two files.
 
 ## Preview in VS Code
 
@@ -16,34 +19,41 @@ Open `index.html` and use the **Live Server** extension (right-click → *Open w
 
 ## Publish on GitHub Pages
 
-This folder is already connected to https://github.com/Lava-Rock-Labs-LLC/nour-spotlight. Wait to publish until Nour has approved the photo and quote, since `index.html` contains her photo.
+This folder is connected to https://github.com/Lava-Rock-Labs-LLC/nour-spotlight. The page was pushed on October 12, 2026 with the photo Nour uses on her LinkedIn profile, but without the quote, since she hadn't replied yet.
 
-1. In this folder, in the VS Code terminal:
+1. On GitHub: **Settings → Pages → Branch: main, folder: /(root) → Save** (one time only).
+2. After a minute or two the page is live at `https://lava-rock-labs-llc.github.io/nour-spotlight/`.
+3. To publish later changes, in the VS Code terminal:
    ```
    git add index.html
-   git commit -m "Add Nour's spotlight page"
+   git commit -m "Describe the change"
    git push
    ```
-2. On GitHub: **Settings → Pages → Branch: main, folder: /(root) → Save**.
-3. After a minute or two the page is live at `https://lava-rock-labs-llc.github.io/nour-spotlight/`.
 
 ## Still to do
 
-- [ ] Nour approves using her photo (ideally she sends the original, uncropped photo; the current one is from a screenshot and the top of her hair is cut off)
+- [x] Photo added (October 12, 2026, the same photo she uses on her LinkedIn profile)
+- [ ] If Nour sends the original, uncropped photo, swap it in (the current one is from a screenshot and the top of her hair is cut off)
 - [ ] Nour approves the LinkedIn quote
 - [ ] Add any details from her resume
 - [ ] Add hobbies, music or a fun fact if she shares them
-- [ ] Publish, then put the GitHub link in the email to Nour
+- [x] Publish on GitHub Pages (October 12, 2026): https://lava-rock-labs-llc.github.io/nour-spotlight/
+- [ ] Put the link in the email to Nour
+- [ ] Post on LinkedIn, then add the link to the WTM tracker sheet
+
+## Adding the quote back
+
+Copy the `<section ... aria-label="In her words">` block from `index-with-photo.html` and paste it just above the "What's next" section in `index.html`. Then commit and push `index.html`.
 
 ## Swapping the photo
 
-The photo is embedded in `index.html` as a long `data:image/jpeg;base64,...` string inside the `<div class="frame">`. To use a new photo, replace the whole `<img ...>` tag with:
+The photo is embedded in `index.html` as a long `data:image/jpeg;base64,...` string inside the `<div class="frame">`. To use a new photo, replace that line with:
 
 ```html
-<img src="nour.jpg" alt="Portrait of Nour Ben Said, smiling">
+<div class="frame"><img src="nour.jpg" alt="Portrait of Nour Ben Said, smiling"></div>
 ```
 
-and upload `nour.jpg` next to `index.html`. The frame is a 4:5 portrait shape, so a head-and-shoulders photo with a little space above the head works best.
+and upload `nour.jpg` next to `index.html` (it's in `.git/info/exclude`, so remove it from there or use `git add -f nour.jpg`). The frame is a 4:5 portrait shape, so a head-and-shoulders photo with a little space above the head works best.
 
 ## Design palette (from the fouta towel)
 
